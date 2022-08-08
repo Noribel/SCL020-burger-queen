@@ -1,0 +1,91 @@
+[
+    {
+    "id": "01",
+    "name": "Jugo de naranja",
+    "Description": "Jugo de naranja 100% natural",
+    "type": "breakfast",
+    "price": "1800",
+    "menu": "day",
+    "count": "1"
+  },
+
+  {
+    "id": "02",
+    "name": "Café",
+    "Description": "Café de grano",
+    "type": "breakfast",
+    "price": "1200",
+    "menu": "day",
+    "count": "1"
+  },
+
+  {
+    "id": "03",
+    "name": "Gaseosa",
+    "Description": "Bebidas",
+    "type": "lunch",
+    "price": "1200",
+    "menu": "day",
+    "count": "1"
+  },
+  
+  {
+    "id": "04",
+    "name": "MediaLuna",
+    "Description": "Panes forma de media luna 100% caseros",
+    "type": "breakfast",
+    "price": "2000",
+    "menu": "day",
+    "count": "1"
+  },
+
+  {
+    "id": "05",
+    "name": "Pan ave-palta",
+    "Description": "Panes a base de molde, con un rico relleno de ave-palta",
+    "type": "breakfast",
+    "price": "2000",
+    "menu": "day",
+    "count": "1"
+  },
+
+  {
+    "id": "06",
+    "name": "Galletas de avena",
+    "Description": "Deliciosa galletas a base de avena 100% naturales",
+    "type": "breakfast",
+    "price": "1300",
+    "menu": "day",
+    "count": "1"
+  },
+  
+  {
+    "id": "07",
+    "name": "Hamburguesa mixta",
+    "Description": "Deliciosa hamburgesa con relleno de carne y pollo",
+    "type": "lunch",
+    "price": "6500",
+    "menu": "day",
+    "count": "1"
+  },
+
+  {
+    "id": "08",
+    "name": "Italiano",
+    "Description": "Vienesa Italiana",
+    "type": "lunch",
+    "price": "1500",
+    "menu": "day",
+    "count": "1"
+  },
+
+  {
+    "id": "09",
+    "name": "Hamburguesa vegana",
+    "Description": "Hamburguesa de Soya, con tomate, lechuga, cebolla y más",
+    "type": "lunch",
+    "price": "6500",
+    "menu": "day",
+    "count": "1"
+  }
+]

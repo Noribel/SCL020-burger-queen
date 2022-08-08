@@ -1,51 +1,57 @@
 import React from 'react'
-import TableBarIcon from '@mui/icons-material/TableBar';
 import Grid from '@mui/material/Grid';
 import { Button } from '@mui/material';
 import { useHistory } from 'react-router-dom';
 
+const table = [
+  {
+    nMesa: 1,
+    nombre: "Mesa 1"
+  },
+  {
+    nMesa: 2,
+    nombre: "Mesa 2"
+  },
+  {
+    nMesa: 3,
+    nombre: "Mesa 3"
+  },
+  {
+    nMesa: 4,
+    nombre: "Mesa 4"
+  },
+  {
+    nMesa: 5,
+    nombre: "Mesa 5"
+  },
+  {
+    nMesa: 6,
+    nombre: "Mesa 6"
+  }
+]
+
 const VistaMesero = () => {
   const history = useHistory();
-  const handleNext = () =>{
+
+  const handleNext = (nMesa) => {
     history.push("/Pedidos")
   }
   return (
-    <div style={{background: "#98C2B1", height: "100%"}}>
-        <img src="https://github.com/Noribel/SCL020-burger-queen/blob/main/src/imagenes/logo.png?raw=true" className="mt-5 rounded-pill w-10" alt=""></img>
-        <Grid container spacing={2}>
-  <Grid item xs={6}>
-  <Button
-   variant='contained'
-   style={{background: "#A91313", color: "white", width: "500px", height: "300px"}}
-   onClick={handleNext}
-   >Mesa 1</Button>
-  </Grid>
-  <Grid item xs={6}>
-  <Button
-  variant='contained'
-  style={{background: "A91313"}}>Mesa 2</Button>
-  </Grid>
-  <Grid item xs={6}>
-  <Button
-  variant='contained'
-  style={{background: "A91313"}}>Mesa 3</Button>
-  </Grid>
-  <Grid item xs={6}>
-  <Button
-  variant='contained'
-  style={{background: "A91313"}}>Mesa 4</Button>
-  </Grid>
-  <Grid item xs={6}>
-  <Button
-  variant='contained'
-  style={{background: "A91313"}}>Mesa 5</Button>
-  </Grid>
-  <Grid item xs={6}>
-  <Button
-  variant='contained'
-  style={{background: "A91313"}}>Mesa 6</Button>
-  </Grid>
-</Grid>
+    <div style={{ background: "#98C2B1", height: "100%" }}>
+      <img src="https://github.com/Noribel/SCL020-burger-queen/blob/main/src/imagenes/logo.png?raw=true" className="mt-5 rounded-pill w-10" alt=""></img>
+      <Grid container spacing={2}>
+        {table.map((item, index) => {
+          return (
+            <Grid item xs={6} key={index}>
+              <Button
+                variant='contained'
+                style={{ background: "#A91313", color: "white", width: "500px", height: "300px" }}
+                onClick={(e) => handleNext(item.nMesa)}
+              >{item.nombre}</Button>
+            </Grid>)
+        })}
+
+      </Grid>
     </div>
   )
 }

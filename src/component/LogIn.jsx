@@ -28,7 +28,7 @@ const login = useCallback(async () =>{
  
 
   return (
-    <div >
+    <div style={{background: "#98C2B1", height: "100%"}}>
        <img src="https://github.com/Noribel/SCL020-burger-queen/blob/main/src/imagenes/logo.png?raw=true" className="mt-5 rounded-pill w-50" alt=""/>
         <form onSubmit={handleLogin}>
             <p className="mt-5">
@@ -39,6 +39,7 @@ const login = useCallback(async () =>{
             type="email" 
             className="form-logIn bg-indigo-600" 
             placeholder='email' 
+            style={{background: "#AD4C4C", color: "white"}}
             onChange={e => setEmail(e.target.value)}
             />
             <input 
@@ -46,12 +47,14 @@ const login = useCallback(async () =>{
             type="password" 
             className="form-logIn mt-2" 
             placeholder='password'
+            style={{background: "#AD4C4C", color: "white"}}
             onChange={e => setPassword(e.target.value)}
             // onChange={handleChange}
              />  
             <button 
             className="btn-dark mt-2" 
             type="submit"
+            style={{background: "#A91313", color: "white"}}
             >Ingresar</button>  
 
           </div>
