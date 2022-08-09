@@ -87,5 +87,15 @@
     "price": "6500",
     "menu": "day",
     "count": "1"
+  },
+
+  {
+    "id": "10",
+    "name": "Té",
+    "Description": "Té Verde",
+    "type": "breakfast",
+    "price": "200",
+    "menu": "day",
+    "count": "1"
   }
 ]

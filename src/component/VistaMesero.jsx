@@ -5,27 +5,27 @@ import { useHistory } from 'react-router-dom';
 
 const table = [
   {
-    nMesa: 1,
+    nMesa: "1",
     nombre: "Mesa 1"
   },
   {
-    nMesa: 2,
+    nMesa: "2",
     nombre: "Mesa 2"
   },
   {
-    nMesa: 3,
+    nMesa: "3",
     nombre: "Mesa 3"
   },
   {
-    nMesa: 4,
+    nMesa: "4",
     nombre: "Mesa 4"
   },
   {
-    nMesa: 5,
+    nMesa: "5",
     nombre: "Mesa 5"
   },
   {
-    nMesa: 6,
+    nMesa: "6",
     nombre: "Mesa 6"
   }
 ]
@@ -33,8 +33,8 @@ const table = [
 const VistaMesero = () => {
   const history = useHistory();
 
-  const handleNext = (nMesa) => {
-    history.push("/Pedidos")
+  const handleNext = (mesa) => {
+    history.push(`/Pedidos/${mesa}`)
   }
   return (
     <div style={{ background: "#98C2B1", height: "100%" }}>

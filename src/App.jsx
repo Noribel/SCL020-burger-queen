@@ -23,7 +23,7 @@ function App() {
         <Route path="/homeMesero">
           <VistaMesero />
         </Route>
-        <Route path="/Pedidos">
+        <Route path="/Pedidos/:mesa">
           <Pedidos />
         </Route>
       </Switch>
