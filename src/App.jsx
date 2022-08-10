@@ -9,6 +9,7 @@ import {
   Link
 } from "react-router-dom";
 import Pedidos from "./component/Pedidos";
+import VistaChef from "./component/VistaChef";
 
 
 
@@ -25,6 +26,9 @@ function App() {
         </Route>
         <Route path="/Pedidos/:mesa">
           <Pedidos />
+        </Route>
+        <Route path="/homeChef">
+          <VistaChef />
         </Route>
       </Switch>
     </Router>

@@ -4,7 +4,7 @@
     "name": "Jugo de naranja",
     "Description": "Jugo de naranja 100% natural",
     "type": "breakfast",
-    "price": "1800",
+    "price": "1200",
     "menu": "day",
     "count": "1"
   },
@@ -14,17 +14,17 @@
     "name": "Café",
     "Description": "Café de grano",
     "type": "breakfast",
-    "price": "1200",
+    "price": "800",
     "menu": "day",
     "count": "1"
   },
 
   {
     "id": "03",
-    "name": "Gaseosa",
-    "Description": "Bebidas",
-    "type": "lunch",
-    "price": "1200",
+    "name": "Té",
+    "Description": "Té Verde",
+    "type": "breakfast",
+    "price": "400",
     "menu": "day",
     "count": "1"
   },
@@ -34,7 +34,7 @@
     "name": "MediaLuna",
     "Description": "Panes forma de media luna 100% caseros",
     "type": "breakfast",
-    "price": "2000",
+    "price": "1500",
     "menu": "day",
     "count": "1"
   },
@@ -58,9 +58,39 @@
     "menu": "day",
     "count": "1"
   },
-  
+
   {
     "id": "07",
+    "name": "Gaseosa",
+    "Description": "Bebidas",
+    "type": "lunch",
+    "price": "1000",
+    "menu": "day",
+    "count": "1"
+  },
+
+  {
+    "id": "08",
+    "name": "Jugo de Frambuesa",
+    "Description": "Jugo 100% natural",
+    "type": "lunch",
+    "price": "1200",
+    "menu": "day",
+    "count": "1"
+  },
+
+  {
+    "id": "09",
+    "name": "Agua",
+    "Description": "Agua ligeramente gasificada",
+    "type": "lunch",
+    "price": "900",
+    "menu": "day",
+    "count": "1"
+  },
+
+  {
+    "id": "10",
     "name": "Hamburguesa mixta",
     "Description": "Deliciosa hamburgesa con relleno de carne y pollo",
     "type": "lunch",
@@ -70,32 +100,23 @@
   },
 
   {
-    "id": "08",
+    "id": "11",
     "name": "Italiano",
     "Description": "Vienesa Italiana",
     "type": "lunch",
-    "price": "1500",
+    "price": "2100",
     "menu": "day",
     "count": "1"
   },
 
   {
-    "id": "09",
+    "id": "12",
     "name": "Hamburguesa vegana",
     "Description": "Hamburguesa de Soya, con tomate, lechuga, cebolla y más",
     "type": "lunch",
     "price": "6500",
     "menu": "day",
     "count": "1"
-  },
-
-  {
-    "id": "10",
-    "name": "Té",
-    "Description": "Té Verde",
-    "type": "breakfast",
-    "price": "200",
-    "menu": "day",
-    "count": "1"
   }
+
 ]
