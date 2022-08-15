@@ -10,7 +10,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { editableInputTypes } from '@testing-library/user-event/dist/utils';
 
-const VistaChef = () => {
+const EstadoPedidos = () => {
 
     const history = useHistory()
 
@@ -33,7 +33,7 @@ const VistaChef = () => {
 
     const [orders, setOrders] = React.useState([])
     // console.log("Camila", orders)
-    const [ordersDone, setOrdersDone] = React.useState([])
+    const [ordersPreparation, setOrdersPreparation] = React.useState([])
     const [delivery, setDelivery] = React.useState([])
    
     const papitas = true;
@@ -42,7 +42,7 @@ const VistaChef = () => {
         if (papitas === true) {
                 // repetir en vista de mesero
             const snapshot = (callback) => {
-                const lookOrders = query(collection(db, "Pedidos"), where('estado', '==', 'en preparación'));
+                const lookOrders = query(collection(db, "Pedidos"), where('estado', '==', 'listo'));
                 onSnapshot(lookOrders, callback);
             }
             snapshot((item) => {
@@ -60,7 +60,7 @@ const VistaChef = () => {
         if (papitas === true) {
                 // repetir en vista de mesero
             const snapshot = (callback) => {
-                const lookOrders = query(collection(db, "Pedidos"), where('estado', '==', 'Servido'));
+                const lookOrders = query(collection(db, "Pedidos"), where('estado', '==', 'en preparación'));
                 onSnapshot(lookOrders, callback);
             }
             snapshot((item) => {
@@ -69,7 +69,7 @@ const VistaChef = () => {
                     ...doc.data()
                 }))
                 // console.log(pedidos)
-                setOrdersDone(pedidos)
+                setOrdersPreparation(pedidos)
             })
         }
     }, [papitas])
@@ -86,7 +86,7 @@ const VistaChef = () => {
     const edit = (item) => {
         console.log(item)
                 updateDoc(doc(db, "Pedidos", item.id), {
-                    estado: "listo"
+                    estado: "Servido"
                 }).then (() => {
                   console.log("listo")
                 })
@@ -109,44 +109,7 @@ const VistaChef = () => {
                 />
             </button>
             <Grid container spacing={2} marginTop="10px">
-                {orders.map((item, index) => {
-                    return (
-                        <Card sx={{ minWidth: 210 }} key={index} style={{ background: "#A91313", color: "white", margin: "5px" }}>
-                            <Typography sx={{ fontSize: 14 }} color="white" gutterBottom marginTop="10px">
-                                Pedido {item.estado}
-                            </Typography>
-                            <Typography variant="h5" component="div">
-                                Mesa {bull}{" " + item.mesa}
-                            </Typography>
-                            {item.orden.map((item, index) => {
-                                return (
-                                    <CardContent key={index}>
-                                        <Typography sx={{ mb: 1.5 }} color="white">
-                                            {item.countProducto} {item.nombreProducto}
-                                        </Typography>
-                                    </CardContent>
-                                )
-                            })}
-                            <CardActions>
-                                <Button size="small" variant="contained" style={{ background: "#98C2B1", color: "#A91313", fontWeight: "bold", marginLeft: "10px" }}>
-                                    Cancelar
-                                </Button>
-                                <Button 
-                                size="small" 
-                                variant="contained" 
-                                style={{ background: "white", color: "#A91313", fontWeight: "bold" }}
-                                onClick={()=> edit(item)}
-                                >
-                                    Listo
-                                </Button>
-                            </CardActions>
-                        </Card>
-                    )
-                })}
-
-            </Grid>
-            <Grid container spacing={2} marginTop="10px">
-                {ordersDone.map((item, index) => {
+                {ordersPreparation.map((item, index) => {
                     return (
                         <Card sx={{ minWidth: 210 }} key={index} style={{ background: "white", color: "#A91313", margin: "5px" }}>
                             <Typography sx={{ fontSize: 14 }} color="#A91313" gutterBottom marginTop="10px">
@@ -174,9 +137,43 @@ const VistaChef = () => {
                 })}
 
             </Grid>
+            <Grid container spacing={2} marginTop="10px">
+                {orders.map((item, index) => {
+                    return (
+                        <Card sx={{ minWidth: 210 }} key={index} style={{ background: "#A91313", color: "white", margin: "5px" }}>
+                            <Typography sx={{ fontSize: 14 }} color="white" gutterBottom marginTop="10px">
+                                Pedido {item.estado}
+                            </Typography>
+                            <Typography variant="h5" component="div">
+                                Mesa {bull}{" " + item.mesa}
+                            </Typography>
+                            {item.orden.map((item, index) => {
+                                return (
+                                    <CardContent key={index}>
+                                        <Typography sx={{ mb: 1.5 }} color="white">
+                                            {item.countProducto} {item.nombreProducto}
+                                        </Typography>
+                                    </CardContent>
+                                )
+                            })}
+                            <CardActions>
+                                <Button 
+                                size="small" 
+                                variant="contained" 
+                                style={{ background: "white", color: "#A91313", fontWeight: "bold" }}
+                                onClick={()=> edit(item)}
+                                >
+                                    Servir
+                                </Button>
+                            </CardActions>
+                        </Card>
+                    )
+                })}
+
+            </Grid>
 
         </div>
     )
 }
 
-export default VistaChef
+export default EstadoPedidos;

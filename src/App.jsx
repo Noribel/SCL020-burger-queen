@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Pedidos from "./component/Pedidos";
 import VistaChef from "./component/VistaChef";
+import EstadoPedidos from "./component/EstadoPedidos";
 
 
 
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route path="/homeChef">
           <VistaChef />
+        </Route>
+        <Route path="/EstadoPedidos">
+          <EstadoPedidos />
         </Route>
       </Switch>
     </Router>

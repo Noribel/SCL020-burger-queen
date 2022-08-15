@@ -56,6 +56,10 @@ const VistaMesero = () => {
 			// An error happened.
 		});
   }
+
+  const handleOrders = () => {
+    history.push("/EstadoPedidos")
+  }
   return (
     <div style={{ background: "#98C2B1", height: "100%" }}>
       <img src="https://github.com/Noribel/SCL020-burger-queen/blob/main/src/imagenes/logo.png?raw=true"
@@ -63,6 +67,21 @@ const VistaMesero = () => {
         alt=""
         style={{ height: "20%", width: "20%" }}
       ></img>
+      <Grid container>
+        <Grid item xs={6}>
+          <Button variant='contained' onClick={handleOrders}>
+            Estado de Pedidos
+          </Button>
+        </Grid>
+        <Grid item xs={6}>
+        <button style={{ background: "#A91313", border: "#A91313" }}>
+        <LogoutIcon
+          onClick={() => handleLogOut()}
+          style={{ color: "#98C2B1" }}
+        />
+      </button>
+        </Grid>
+      </Grid>
       <Grid container spacing={2}>
         {table.map((item, index) => {
           return (
@@ -76,12 +95,7 @@ const VistaMesero = () => {
         })}
 
       </Grid>
-      <button style={{ background: "#A91313", border: "#A91313" }}>
-        <LogoutIcon
-          onClick={() => handleLogOut()}
-          style={{ color: "#98C2B1" }}
-        />
-      </button>
+      
     </div>
   )
 }

@@ -16,7 +16,7 @@ const LogIn = () => {
   const login = useCallback(async () => {
     try {
       const resp = await signInWithEmailAndPassword(auth, email, password)
-      console.log("domingo", resp)
+      // console.log("domingo", resp)
 
         if (resp.user.email === "clearca57@gmail.com"){
           history.push("/homeMesero") 
